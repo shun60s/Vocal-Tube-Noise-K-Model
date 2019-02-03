@@ -1,0 +1,10 @@
+/__pycache__/
+/old/
+*.bat
+*.pyc
+*.md~
+*.py~
+*.*~
+*.sh
+*.wav
+*.pdf

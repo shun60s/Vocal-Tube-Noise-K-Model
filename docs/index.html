@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>vocal tract tube noise model   </title>
+<meta name="description" content="generate plosive voice /ga/ /ka/ sound by pseudo blast impulse and noise source" />
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-lg px-3 my-5 markdown-body">
+<h1>vocal tract tube noise model   </h1>
+<p> <br />
+This is an experiment to generate plosive voice /ga/ /ka/ sound by pseudo blast impulse, noise source instead of turbulent sound, and two tubes model.<br /></p>
+
+<p><a href="https://github.com/shun60s/Vocal-Tube-Noise-K-Model">github repository</a><br /></p>
+
+<h2>usage   </h2>
+
+<p>Generate following vowel sound, using two tubes model <br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+python3 main2var_1a.py
+</code></pre></div></div>
+<p><img src="1a2_portion.png" alt="figure1" ><br /></p>
+
+
+<p>Generate preceding noise sound, using perlin noise<br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+python3 PerlinNoise.py
+</code></pre></div></div>
+<p><img src="kg-noise_waveform.png" alt="figure2" ><br /></p>
+
+
+<p>Generate pseudo blast impulse and mix with the noise sound<br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+python3 mix_impulse.py
+</code></pre></div></div>
+<p><img src="kg-blast-impulse-and-noise-waveform.png" alt="figure3" ><br /></p>
+
+
+<p>Apply resonance effect to the mixed sound<br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+python3 main2noiseresona_ku.py
+</code></pre></div></div>
+<p><img src="kg-noise-with-resonance-waveform.png" alt="figure4" ><br /></p>
+
+
+<p>Combine preceding mixed sound and following vowel sound<br /></p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+python3 make_gka.py
+</code></pre></div></div>
+<p><img src="pseudo-ka-waveform.png" alt="figure5" ><br /></p>
+
+<p>This will save gka_1a1_noise0_i40_s800_resona_0.wav that sounds similar to voice /ga/ sound<br />
+and wii save gka_1a2_noise0_i40_s800_resona_0.wav that is small voiced feeling to near /ka/ sound<br /></p>
+
+
+<h2>Generated sample  </h2>
+
+<p>There are sample wav files of generated waveform in the generated_waveform folder.<br /></p>
+
+
+<h2>Document  </h2>
+
+<p>Please see related WEB <a href="https://wsignal.sakura.ne.jp/onsei2007/python5-e.html">Plosive voice /ga/ /ka/ sound waveform generation by pseudo blast impulse, noise source, and two tubes model</a> or
+<a href="https://wsignal.sakura.ne.jp/onsei2007/python5.html">same content in Japanese</a><br /></p>
+
+
+<h2>License    </h2>
+<p>MIT<br />
+Regarding to PerlinNoise.py, please follow the notice in the source code. </p>
+</div>
+</body>
+</html>
