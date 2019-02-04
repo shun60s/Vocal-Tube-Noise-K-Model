@@ -51,7 +51,8 @@ There are sample wav files of generated waveform in the generated_waveform folde
 
 ## Document  
 
-Please see related WEB [Plosive voice /ga/ /ka/ sound waveform generation by pseudo blast impulse, noise source, and two tubes model](https://wsignal.sakura.ne.jp/onsei2007/python5-e.html) or
+There is a document, Explain-E.pdf, in the docs folder.  
+For more information, please see related WEB [Plosive voice /ga/ /ka/ sound waveform generation by pseudo blast impulse, noise source, and two tubes model](https://wsignal.sakura.ne.jp/onsei2007/python5-e.html) or
 [same content in Japanese](https://wsignal.sakura.ne.jp/onsei2007/python5.html)  
 
 
