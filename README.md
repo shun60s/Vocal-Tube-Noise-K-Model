@@ -1,16 +1,16 @@
 # vocal tract tube noise model   
    
-This is an experiment to generate plosive voice /ga/ /ka/ sound by pseudo blast impulse, noise source instead of turbulent sound, and two tubes model.  
+This is an experiment to generate plosive voice /ga/ /ka/ sound by pseudo blast impulse, noise source instead of turbulent sound, and two tubes model with loss.  
   
 [github repository](https://github.com/shun60s/Vocal-Tube-Noise-K-Model)  
 
 ## usage   
 
-Generate following vowel sound, using two tubes model   
+Generate following vowel sound, using two tubes model with loss   
 ```
-python3 main2var_1a.py
+python3 main2varloss_1a.py
 ```
-![figure1](docs/1a2_portion.png)  
+![figure1](docs/model-K-A_var_loss2.png)  
 
 
 Generate preceding noise sound, using perlin noise  
@@ -40,18 +40,12 @@ python3 make_gka.py
 ```
 ![figure5](docs/pseudo-ka-waveform.png)  
 
-This will save gka_1a1_noise0_i40_s800_resona_0.wav that sounds similar to voice /ga/ sound  
-and wii save gka_1a2_noise0_i40_s800_resona_0.wav that is small voiced feeling to near /ka/ sound  
-
-
-## Generated sample  
-
-There are sample wav files of generated waveform in the generated_waveform folder.  
+This will save gka_1a1_varloss0_0_noise0_i40_s600_resona_0.wav that sounds similar to voice /ga/ sound  
+and wii save gka_1a1_varloss0_01_noise0_i40_s600_resona_0.wav that becomes unvoiced sound.  
 
 
 ## Document  
 
-There is a document [Explain-E.pdf](docs/Explain-E.pdf) in the docs folder.  
 For more information, please see related WEB [Plosive voice /ga/ /ka/ sound waveform generation by pseudo blast impulse, noise source, and two tubes model](https://wsignal.sakura.ne.jp/onsei2007/python5-e.html) or
 [same content in Japanese](https://wsignal.sakura.ne.jp/onsei2007/python5.html)  
 

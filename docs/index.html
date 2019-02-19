@@ -11,17 +11,17 @@
 <div class="container-lg px-3 my-5 markdown-body">
 <h1>vocal tract tube noise model   </h1>
 <p> <br />
-This is an experiment to generate plosive voice /ga/ /ka/ sound by pseudo blast impulse, noise source instead of turbulent sound, and two tubes model.<br /></p>
+This is an experiment to generate plosive voice /ga/ /ka/ sound by pseudo blast impulse, noise source instead of turbulent sound, and two tubes model with loss.<br /></p>
 
 <p><a href="https://github.com/shun60s/Vocal-Tube-Noise-K-Model">github repository</a><br /></p>
 
 <h2>usage   </h2>
 
-<p>Generate following vowel sound, using two tubes model <br /></p>
+<p>Generate following vowel sound, using two tubes model with loss<br /></p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-python3 main2var_1a.py
+python3 main2varloss_1a.py
 </code></pre></div></div>
-<p><img src="1a2_portion.png" alt="figure1" ><br /></p>
+<p><img src="model-K-A_var_loss2.png" alt="figure1" ><br /></p>
 
 
 <p>Generate preceding noise sound, using perlin noise<br /></p>
@@ -51,17 +51,14 @@ python3 make_gka.py
 </code></pre></div></div>
 <p><img src="pseudo-ka-waveform.png" alt="figure5" ><br /></p>
 
-<p>This will save gka_1a1_noise0_i40_s800_resona_0.wav that sounds similar to voice /ga/ sound<br />
-and wii save gka_1a2_noise0_i40_s800_resona_0.wav that is small voiced feeling to near /ka/ sound<br /></p>
 
-
-<h2>Generated sample  </h2>
-
-<p>There are sample wav files of generated waveform in the generated_waveform folder.<br /></p>
+<p>
+This will save gka_1a1_varloss0_0_noise0_i40_s600_resona_0.wav that sounds similar to voice /ga/ sound<br />  
+and wii save gka_1a1_varloss0_01_noise0_i40_s600_resona_0.wav that becomes unvoiced sound.<br /></p>
 
 
 <h2>Document  </h2>
-<p>There is a document, <a href="Explain-E.pdf">Explain-E.pdf</a>, in the docs folder.<br /></p>
+
 <p>For more information, please see related WEB <a href="https://wsignal.sakura.ne.jp/onsei2007/python5-e.html">Plosive voice /ga/ /ka/ sound waveform generation by pseudo blast impulse, noise source, and two tubes model</a> or
 <a href="https://wsignal.sakura.ne.jp/onsei2007/python5.html">same content in Japanese</a><br /></p>
 

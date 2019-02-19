@@ -45,8 +45,9 @@ def save_wav( yout, wav_path, sampling_rate=48000):
 	print ('save ', wav_path) 
 	
 def f_show( twotube, i):
-	plt.subplot(MAX_PATTERNS * 2, 1 ,int(2*i+1))
-	yout=plot_waveform(twotube, 'Noise waveform with resonance effect', glo, hpf)
+	plt.subplot(MAX_PATTERNS, 1 ,i+1)
+	#plt.subplot(MAX_PATTERNS * 2, 1 ,int(2*i+1))
+	yout=plot_waveform(twotube, 'Noise waveform with resonance (resona_' + str(i) + ')', glo, hpf)
 	#plt.subplot(MAX_PATTERNS * 2 ,1, int(2*i+2))
 	#plot_freq_res(twotube, 'Frequency response (whole span) '+str(i), glo, hpf)
 	return yout
@@ -63,7 +64,7 @@ if __name__ == '__main__':
 	
 	import itertools
 	
-	MAX_PATTERNS=1  # number of display patterns
+	MAX_PATTERNS=2 #1  # number of display patterns
 	
 	# set some initial value
 	"""
@@ -72,6 +73,7 @@ if __name__ == '__main__':
 	A1_u=7.0    # set list of 1st tube's area by unit is [cm^2]
 	L2_u=7.0    # set list of 2nd tube's length by unit is [cm]
 	A2_u=3.0    # set list of 2nd tube's area by unit is [cm^2]
+	r1= -0.4
 	"""
 	L1=np.ones(MAX_PATTERNS) * 10.0
 	A1=np.ones(MAX_PATTERNS) * 7.0
@@ -80,7 +82,7 @@ if __name__ == '__main__':
 	
 	# set cross section area to specify reflection ratio r1
 	for i in range(MAX_PATTERNS): 
-		A2[i]= get_A2( A1[i], 0.0) # two tubes become is one tube  when r1=0.0, because area is same.
+		A2[i]= get_A2( A1[i], -0.4)  # neutral (r1=-0.4)
 	
 	# set varied tube's length, (varied resonance frequecny)
 	L1_list=[ 7.0, 7.0, 7.0, 7.0]
@@ -91,7 +93,7 @@ if __name__ == '__main__':
 	
 	# load a wav file as source source
 	blast_impulse_duration=[40]  # [40, 50]
-	start_frequency=[800]  # [600, 800]
+	start_frequency=[600]  # [600, 800]
 	Perlin_Noise_no=[0] # [0, 1]
 	clist=list(itertools.product(blast_impulse_duration,start_frequency,Perlin_Noise_no ))
 	print (clist)

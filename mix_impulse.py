@@ -106,7 +106,7 @@ if __name__ == '__main__':
 	
 	# blast impulse duration list
 	blast_impulse_duration= [40] # [40, 50]
-	start_frequency= [800]  # [600, 800]
+	start_frequency= [600]  # [600, 800]
 	Perlin_Noise_no=[0] # [0, 1]
 	clist=list(itertools.product(blast_impulse_duration,start_frequency, Perlin_Noise_no ))
 	print (clist)

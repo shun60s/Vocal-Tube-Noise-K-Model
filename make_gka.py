@@ -106,13 +106,14 @@ if __name__ == '__main__':
 	import itertools
 	
 	# load k noise
-	blast_impulse_duration=[40]
-	start_frequency=[800]
+	blast_impulse_duration=[40] # [40, 50]
+	start_frequency=[600]
 	resona_no=[0] # [0, 1, 2, 3]
 	Perlin_Noise_no=[0] # [0, 1]
-	n_cycle_list=[2, 1] #
+	n_cycle_list=[1] # [2, 1]
+	passing_loss_ratio = [0.0, 0.01]  # [0.01]
 	
-	clist=list(itertools.product(blast_impulse_duration,start_frequency,resona_no, Perlin_Noise_no, n_cycle_list ))
+	clist=list(itertools.product(blast_impulse_duration,start_frequency,resona_no, Perlin_Noise_no, n_cycle_list, passing_loss_ratio ))
 	print (clist)
 	
 	for i in range(len(clist)):
@@ -122,7 +123,7 @@ if __name__ == '__main__':
 			continue
 		
 		# load  a portion of simulated opening mouth to /a/
-		ya=load_wav( 'yout_1a' + str(clist[i][4]) + '_var.wav' )
+		ya=load_wav( 'yout_1a' + str(clist[i][4]) + '_varloss' + str(clist[i][5]).replace('.','_') +  '.wav' )
 		if ya is None: # if the file is not exist, skip 
 			continue
 		
@@ -143,10 +144,10 @@ if __name__ == '__main__':
 		
 		# combining
 		yout= np.concatenate( (yz100, y3fadeout, yaltrim,  yz100 ) )
-		plot_waveform(yout, 'Waveform combined ' + '(1a' + str(clist[i][4]) + ')')
+		plot_waveform(yout, 'Waveform combined ' + '(1a' + str(clist[i][4]) + ') loss ratio: ' + str(clist[i][5]) )
 		
 		# save as a wav file
-		save_wav(yout, 'gka_1a' + str(clist[i][4]) + '_noise' + str(clist[i][3]) + '_i' + str(clist[i][0]) + '_s' +  str(clist[i][1]) + '_resona_' + str(clist[i][2]) + '.wav')
+		save_wav(yout, 'gka_1a' + str(clist[i][4]) + '_varloss' +  str(clist[i][5]).replace('.','_') +  '_noise' + str(clist[i][3]) + '_i' + str(clist[i][0]) + '_s' +  str(clist[i][1]) + '_resona_' + str(clist[i][2])  + '.wav')
 		
 
 #This file uses TAB
