@@ -40,7 +40,7 @@ python3 make_gka.py
 ```
 ![figure5](docs/pseudo-ka-waveform.png)  
 
-This will save gka_1a1_varloss0_0_noise0_i40_s600_resona_0.wav that sounds similar to voice /ga/ sound  
+It will save gka_1a1_varloss0_0_noise0_i40_s600_resona_0.wav that sounds similar to voice /ga/ sound  
 and wii save gka_1a1_varloss0_01_noise0_i40_s600_resona_0.wav that becomes unvoiced sound.  
 
 
